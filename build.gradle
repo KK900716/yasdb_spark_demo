@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.sics'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://repo1.maven.org/maven2/'
+    }
+}
+
+dependencies {
+    implementation files('lib/yashandb-jdbc-1.7.16.jar')
+//    implementation 'com.yashandb:yashandb-jdbc:1.7.10'
+    implementation 'org.apache.spark:spark-sql_2.12:3.0.2'
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
